@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y git \
 	&& apt-get autoremove -y \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV SMARM_HOST :2375
+#if 0.0.0.0 is not set, then it will be shown as 127.0.0.1 while running
+#ENV SMARM_HOST :2375
+ENV SMARM_HOST 0.0.0.0:2375
 
 EXPOSE 2375
 
